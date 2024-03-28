@@ -1,0 +1,31 @@
+td {
+  padding: 0px 16px;
+  height: 34px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.time-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.td-team {
+  font-weight: 700;
+}
+
+.tr-merged-cell:has(.td-team) {
+  border-bottom: 1px solid lightgray;
+}
+
+@media screen and (max-width: 1440px) {
+  .td-team {
+    display: block;
+  }
+  .td-day {
+    display: block;
+  }
+  
+}

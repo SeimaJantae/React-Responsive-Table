@@ -1,0 +1,51 @@
+.table-wrap {
+  padding: 0;
+}
+
+table {
+  width: 838px;
+  margin: auto;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid #111827;
+  font-weight: 800;
+  padding: 4px 16px;
+  height: 34px;
+  box-sizing: border-box;
+}
+
+.th-time {
+  text-align: center;
+}
+
+tbody tr {
+  color: #1f2937;
+}
+
+table tbody:nth-child(even) {
+  background-color: #e5e7eb;
+}
+
+table tbody:nth-child(odd) {
+  background-color: #f3f4f6;
+}
+
+@media screen and (max-width: 1440px) {
+  table {
+    width: 90%;
+    margin: auto;
+  }
+  .th-team {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .table-wrap {
+    overflow-x: scroll;
+  }
+}

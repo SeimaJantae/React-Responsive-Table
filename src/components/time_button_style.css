@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b5563;
+  border-radius: 20px;
+  width: 51px;
+  height: 26px;
+  box-sizing: border-box;
+  padding: 4px 10px;
+  margin: 0px 4px;
+}
+
+p {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}

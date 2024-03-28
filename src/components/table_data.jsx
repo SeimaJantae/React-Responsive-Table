@@ -6,55 +6,57 @@ function TableData({ tableContent }) {
   return (
     <>
       {tableContent.works.length > 1 ? (
+        // Team data table has multiple work
         <tbody>
-          {tableContent.works.map((work, i) => {
-            return (
-              <tr className="tr-merged-cell">
-                {i === 0 ? (
-                  <>
-                    <td data-cell="Team" rowSpan={tableContent.works.length} className="td-team">
-                      {tableContent.team}
-                    </td>
-                    <td data-cell="Day" className="td-day">
-                      {work.day}
-                    </td>
-                    <td data-cell="Time" className="td-time">
-                      <div className="time-flex">
-                        <TimeButton time={work.time.start} />
-                        <div>-</div>
-
-                        <TimeButton time={work.time.end} />
-                      </div>
-                    </td>
-                    <td data-cell="Hall" className="td-hall">
-                      {work.hall}
-                    </td>
-                  </>
-                ) : (
-                  <>
-                    <td data-cell="Day" className="td-day">
-                      {work.day}
-                    </td>
-                    <td data-cell="Time" className="td-time">
-                      <div className="time-flex">
-                        <TimeButton time={work.time.start} />
-                        <div>-</div>
-
-                        <TimeButton time={work.time.end} />
-                      </div>
-                    </td>
-                    <td data-cell="Hall" className="td-hall">
-                      {work.hall}
-                    </td>
-                  </>
-                )}
-              </tr>
-            );
-          })}
+          {React.Children.toArray(
+            tableContent.works.map((work, i) => {
+              return (
+                <>
+                  {i === 0 ? (
+                    <tr className="tr-merged-cell tr-full-data">
+                      <td data-cell="Team" rowSpan={tableContent.works.length} className="td-team">
+                        {tableContent.team}
+                      </td>
+                      <td data-cell="Day" className="td-day">
+                        {work.day}
+                      </td>
+                      <td data-cell="Time" className="td-time">
+                        <div className="time-flex">
+                          <TimeButton time={work.time.start} />
+                          <div>-</div>
+                          <TimeButton time={work.time.end} />
+                        </div>
+                      </td>
+                      <td data-cell="Hall" className="td-hall">
+                        {work.hall}
+                      </td>
+                    </tr>
+                  ) : (
+                    <tr>
+                      <td data-cell="Day" className="td-day">
+                        {work.day}
+                      </td>
+                      <td data-cell="Time" className="td-time">
+                        <div className="time-flex">
+                          <TimeButton time={work.time.start} />
+                          <div>-</div>
+                          <TimeButton time={work.time.end} />
+                        </div>
+                      </td>
+                      <td data-cell="Hall" className="td-hall">
+                        {work.hall}
+                      </td>
+                    </tr>
+                  )}
+                </>
+              );
+            })
+          )}
         </tbody>
       ) : (
+        // Team data table has only one work
         <tbody>
-          <tr>
+          <tr className="tr-full-data">
             <td data-cell="Team" className="td-team">
               {tableContent.team}
             </td>

@@ -1,9 +1,7 @@
-.table-wrap {
-  padding: 0;
-}
+
 
 table {
-  width: 838px;
+  width: 90%;
   margin: auto;
   border-collapse: collapse;
   padding: 0;
@@ -15,7 +13,12 @@ th {
   font-weight: 800;
   padding: 4px 16px;
   height: 34px;
-  box-sizing: border-box;
+}
+
+table tbody tr td {
+  padding: 4px 16px;
+  height: 34px;
+  margin-bottom: 4px;
 }
 
 .th-time {
@@ -35,10 +38,6 @@ table tbody:nth-child(odd) {
 }
 
 @media screen and (max-width: 1440px) {
-  table {
-    width: 90%;
-    margin: auto;
-  }
   .th-team {
     display: none;
   }
